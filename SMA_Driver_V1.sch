@@ -203,7 +203,7 @@ L Device:R R5
 U 1 1 5BE7AD1F
 P 3900 4400
 F 0 "R5" V 3693 4400 50  0000 C CNN
-F 1 "15.9k" V 3784 4400 50  0000 C CNN
+F 1 "15.8k" V 3784 4400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3830 4400 50  0001 C CNN
 F 3 "~" H 3900 4400 50  0001 C CNN
 	1    3900 4400
@@ -1188,17 +1188,17 @@ Text Label 11700 5000 2    50   ~ 0
 POT_1
 Text Label 11700 5100 2    50   ~ 0
 POT_2
-Text Label 11700 5200 2    50   ~ 0
-SMA_H1_L
 Text Label 11700 5300 2    50   ~ 0
+SMA_H1_L
+Text Label 11700 5400 2    50   ~ 0
 SMA_H1_R
-Text Label 11700 5500 2    50   ~ 0
+Text Label 11700 6000 2    50   ~ 0
 LED_STAT_B1
 Text Label 11700 5600 2    50   ~ 0
 LED_STAT_B2
 Text Label 11700 5900 2    50   ~ 0
 LED_STAT_P
-Text Label 11700 5400 2    50   ~ 0
+Text Label 11700 5200 2    50   ~ 0
 LED_STAT_O
 Wire Wire Line
 	13700 6700 13450 6700
@@ -2061,7 +2061,6 @@ NoConn ~ 12950 3300
 NoConn ~ 9350 3500
 Wire Wire Line
 	8750 4600 8550 4600
-NoConn ~ 9750 5500
 $Comp
 L Device:C C23
 U 1 1 5C753CFA
@@ -2122,10 +2121,6 @@ Wire Wire Line
 	8400 3450 8050 3450
 Wire Wire Line
 	8050 3450 8050 3500
-Wire Bus Line
-	14600 3300 14600 4150
-Wire Bus Line
-	14250 4150 14250 5550
 Connection ~ 8400 3450
 $Comp
 L power:GND #PWR03
@@ -2149,4 +2144,43 @@ F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/E
 	1    8050 3650
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	9750 5500 10600 5500
+Wire Wire Line
+	10600 5500 10600 5300
+$Comp
+L Device:R R20
+U 1 1 5C349DC2
+P 10600 5150
+F 0 "R20" V 10393 5150 50  0000 C CNN
+F 1 "10k" V 10484 5150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10530 5150 50  0001 C CNN
+F 3 "~" H 10600 5150 50  0001 C CNN
+	1    10600 5150
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR0138
+U 1 1 5C34A21A
+P 10600 4900
+F 0 "#PWR0138" H 10600 4750 50  0001 C CNN
+F 1 "+5V" H 10615 5073 50  0000 C CNN
+F 2 "" H 10600 4900 50  0001 C CNN
+F 3 "" H 10600 4900 50  0001 C CNN
+	1    10600 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 4900 10600 5000
+Wire Wire Line
+	10600 5500 10750 5500
+Wire Bus Line
+	14600 3300 14600 4150
+Wire Bus Line
+	14250 4150 14250 5550
+Connection ~ 10600 5500
+Text Label 10750 5500 0    50   ~ 0
+Button
+Text Label 11700 5500 2    50   ~ 0
+Button
 $EndSCHEMATC
